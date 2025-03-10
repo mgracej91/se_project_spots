@@ -1,0 +1,13 @@
+.header {
+  background: #ffffffcc;
+  max-height: 46px;
+  border-bottom-width: 1px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header__logo {
+  width: 94px;
+  height: 26px;
+}

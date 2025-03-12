@@ -1,5 +1,7 @@
 .profile {
+  margin: 0 auto;
   display: flex;
+  justify-content: center;
   padding: 34px 0 20px;
   border-bottom: 1px solid rgba(33, 33, 33, 0.4);
 }
@@ -49,10 +51,7 @@
 }
 
 .profile__edit-button {
-  max-width: 107.34px;
-  min-height: 16px;
   margin-top: auto;
-  margin-right: 8px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   opacity: 0.7;
   border: none;
@@ -61,30 +60,31 @@
   line-height: 1;
   letter-spacing: 0;
   color: rgba(33, 33, 33, 1);
+  white-space: nowrap;
 }
 
 .profile__newpost-button {
-  min-width: 149px;
-  max-height: 52px;
-  padding: 18px 32px;
+  max-width: 149px;
+  height: 52px;
+  margin-left: auto;
   border-radius: 8px;
   background-color: #212121;
   color: rgba(252, 245, 229, 1);
-  margin-left: auto;
-  margin-top: 138px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 627px) {
   .profile {
+    max-width: 288px;
     flex-direction: column;
-    max-width: 100%x;
     align-items: center;
     text-align: center;
     padding-top: 20px;
+    padding-left: 16px;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.4);
   }
 
   .profile__column {
@@ -128,8 +128,7 @@
   }
   .profile__newpost-button {
     margin: 0;
-    display: flex;
-    justify-content: center;
+    max-width: 288px;
     border-radius: 8px;
   }
 }

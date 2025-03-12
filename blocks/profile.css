@@ -52,6 +52,7 @@
 
 .profile__edit-button {
   margin-top: auto;
+  text-align: left;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   opacity: 0.7;
   border: none;
@@ -64,8 +65,10 @@
 }
 
 .profile__newpost-button {
+  position: relative;
   max-width: 149px;
   height: 52px;
+  top: 139px;
   margin-left: auto;
   border-radius: 8px;
   background-color: #212121;
@@ -126,9 +129,12 @@
     height: 80px;
     width: 80px;
   }
+
   .profile__newpost-button {
     margin: 0;
-    max-width: 288px;
     border-radius: 8px;
+    width: 100%;
+    gap: 8px;
+    position: sticky;
   }
 }

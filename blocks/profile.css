@@ -11,6 +11,7 @@
 }
 
 .profile__title {
+  max-width: 420px;
   margin: 0 0 12px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -27,6 +28,7 @@
 }
 
 .profile__description {
+  max-width: 420px;
   margin: 0;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -76,10 +78,10 @@
   line-height: 1;
 }
 
-@media screen and (max-width: 627px) {
+@media screen and (max-width: 320px) {
   .profile {
     flex-direction: column;
-    max-width: 280px;
+    max-width: 100%x;
     align-items: center;
     text-align: center;
     padding-top: 20px;
@@ -90,7 +92,12 @@
   }
 
   .profile__title {
+    max-width: 288px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 500;
     font-size: 20px;
+    line-height: 1;
+    text-align: center;
     margin: 0 0 6px;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -101,7 +108,13 @@
   }
 
   .profile__description {
+    max-width: 288px;
     margin: 0 0 32px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1;
+    text-align: center;
   }
 
   .profile__edit-button {
@@ -115,6 +128,8 @@
   }
   .profile__newpost-button {
     margin: 0;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
   }
 }

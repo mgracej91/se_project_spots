@@ -4,11 +4,8 @@
   align-items: center;
 }
 
-.card {
-  max-width: 413px;
-}
-
 .card__title {
+  max-width: 413px;
   margin: 12px 0 0;
   font-weight: 500;
   font-size: 20px;
@@ -16,10 +13,13 @@
   letter-spacing: 0%;
   color: rgba(33, 33, 33, 1);
   font-family: "Poppins", Arial, Helvetica, sans-serif;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .card__image {
-  width: 413px;
+  width: 100%;
   height: 413px;
   object-fit: cover;
   display: block;
@@ -37,4 +37,26 @@
   left: 390px;
   border: none;
   background-color: transparent;
+}
+
+@media screen and (max-width: 627px) {
+  .card__image {
+    width: 288px;
+    height: 288px;
+    border-radius: 1.75%;
+  }
+
+  .card__title {
+    font-size: 16px;
+  }
+
+  .card__like-button {
+    width: 20px;
+    height: 18px;
+    opacity: 0.4;
+  }
+
+  .card__content {
+    width: 288px;
+  }
 }

@@ -5,6 +5,8 @@
 }
 
 .profile__avatar {
+  height: 190px;
+  width: 190px;
   margin-right: 20px;
 }
 
@@ -16,6 +18,12 @@
   line-height: 1;
   letter-spacing: 0%;
   color: #212121;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .profile__description {
@@ -26,6 +34,12 @@
   line-height: 1;
   letter-spacing: 0%;
   color: rgba(33, 33, 33, 0.7);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-clamp: 3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .profile__column {
   display: flex;
@@ -60,15 +74,47 @@
   font-weight: 500;
   font-size: 16px;
   line-height: 1;
-  letter-spacing: 0%;
 }
 
 @media screen and (max-width: 627px) {
   .profile {
     flex-direction: column;
+    max-width: 280px;
+    align-items: center;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .profile__column {
+    margin: 0 0 20px;
+  }
+
+  .profile__title {
+    font-size: 20px;
+    margin: 0 0 6px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  .profile__description {
+    margin: 0 0 32px;
+  }
+
+  .profile__edit-button {
+    margin: 0 auto;
   }
 
   .profile__avatar {
-    margin-right: 0;
+    margin: 0 0 12px;
+    height: 80px;
+    width: 80px;
+  }
+  .profile__newpost-button {
+    margin: 0;
+    width: 100%;
   }
 }

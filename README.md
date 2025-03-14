@@ -25,3 +25,7 @@ This webpage has many features for users to interact with such as setting their 
 This webpage is deployed to GitHubPages
 
 - [Deployment Link:] https://mgracej91.github.io/se_project_spots/
+
+My description video for this project is deployed to Google Drive
+
+- [deployment Link] https://drive.google.com/file/d/1aIG2z74btTLGDp7Hwp6E3cmeV2sCjF-R/view?usp=sharing

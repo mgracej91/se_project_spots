@@ -11,9 +11,9 @@ This project is made so all the elements are displayed correctly on popular scre
 - HTML
 - CSS
 - Responsive design
-- Media queries
 - Figma design
 - BEM file structure
+- Grid
 - Git
 
 ## Features
@@ -28,4 +28,6 @@ This webpage is deployed to GitHubPages
 
 My description video for this project is deployed to Google Drive
 
-- [deployment Link] https://drive.google.com/file/d/1aIG2z74btTLGDp7Hwp6E3cmeV2sCjF-R/view?usp=sharing
+- [Deployment Link:] https://drive.google.com/file/d/1aIG2z74btTLGDp7Hwp6E3cmeV2sCjF-R/view?usp=sharing
+
+One of the challenges I had in doing this project was positioning and getting things in the right place. To fix this issue I used online resources like MDN to help correct the positioning for some of the content on my page such as the buttons.

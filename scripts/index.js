@@ -31,14 +31,26 @@ const editModal = document.querySelector("#edit-modal");
 
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
 
+profileEditButton.addEventListener("click", openModal);
+
+editModalCloseButton.addEventListener("click", closeModal);
+
+const profileTitle = document.querySelector(".profile__title");
+
+const editModalTitleInput = editModal.querySelector("#profile-title-input");
+
+const profileDescription = document.querySelector(".profile__description");
+
+const editModalDescriptionInput = editModal.querySelector(
+  "#profile-description-input"
+);
+
 function openModal() {
+  editModalTitleInput.value = profileTitle.textContent;
+  editModalDescriptionInput.value = profileDescription.textContent;
   editModal.classList.add("modal_opened");
 }
 
 function closeModal() {
   editModal.classList.remove("modal_opened");
 }
-
-profileEditButton.addEventListener("click", openModal);
-
-editModalCloseButton.addEventListener("click", closeModal);

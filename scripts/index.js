@@ -45,6 +45,8 @@ const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
 
+const editModalForm = editModal.querySelector(".modal__form");
+
 function openModal() {
   editModalTitleInput.value = profileTitle.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
@@ -54,3 +56,12 @@ function openModal() {
 function closeModal() {
   editModal.classList.remove("modal_opened");
 }
+
+function handleEditModalFormSubmit(evt) {
+  evt.preventDefault();
+  profileTitle.textContent = editModalTitleInput.value;
+  profileDescription.textContent = editModalDescriptionInput.value;
+  closeModal();
+}
+
+editModalForm.addEventListener("submit", handleEditModalFormSubmit);

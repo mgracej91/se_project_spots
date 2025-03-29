@@ -1,27 +1,27 @@
 const initialCards = [
   {
-    name: "Beach",
-    link: "https://unsplash.com/photos/coconut-tree-on-beach-DH_u2aV3nGM?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+    name: "Sunflower Field",
+    link: "https://images.unsplash.com/photo-1536633125620-8a3245c11ffa?w=120&dpr=2&h=200&auto=format&fit=crop&q=60&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8c3VuZmxvd2VyJTIwZmllbGR8ZW58MHx8fHwxNzQzMTE0OTQ5fDA&ixlib=rb-4.0.3",
   },
   {
-    name: "Believe",
-    link: "https://unsplash.com/photos/toddler-looking-at-believe-in-yourself-graffiti-yMg_SMqfoRU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+    name: "Cocnut tree near the sea",
+    link: "https://images.unsplash.com/photo-1513907404652-d138942b8859?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Latte",
-    link: "https://unsplash.com/photos/cup-of-coffee-on-saucer-with-teaspoon-on-pink-tabletop-X2s8GhnQmds?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+    name: "Water stream through the mountains",
+    link: "https://images.unsplash.com/photo-1610997186335-12de8a2dc7fd?q=80&w=1642&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Marylin Monroe",
-    link: "https://unsplash.com/photos/woman-in-white-dress-sitting-on-chair-LvJvNPJlu9E?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+    name: "Northern Lights in snowy Alaska",
+    link: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Peace",
-    link: "https://unsplash.com/photos/woman-doing-yoga-meditation-on-brown-parquet-flooring-NTyBbu66_SI?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+    name: "Green Valley Mountains",
+    link: "https://images.unsplash.com/photo-1617634667039-8e4cb277ab46?q=80&w=1568&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Sunflower",
-    link: "https://unsplash.com/photos/yellow-sunflower-in-bloom-during-daytime-Kh5uDUoXXfU?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash",
+    name: "Gondola through the city of venice",
+    link: "https://images.unsplash.com/photo-1514890547357-a9ee288728e0?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -65,3 +65,28 @@ function handleEditModalFormSubmit(evt) {
 }
 
 editModalForm.addEventListener("submit", handleEditModalFormSubmit);
+
+const cardTemplate = document.querySelector("#card-template");
+const cardsList = document.querySelector(".cards__list");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.content
+    .querySelector(".card")
+    .cloneNode(true);
+
+  const cardNameEl = cardElement.querySelector(".card__title");
+  // select the image element
+  const cardImageEl = cardElement.querySelector(".card__image");
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+
+  cardNameEl.textContent = data.name;
+  // assign values to images src and alt
+
+  return cardElement;
+}
+
+for (let i = 0; i < initialCards.length; i++) {
+  const cardElement = getCardElement(initialCards[i]);
+  cardsList.prepend(cardElement);
+}

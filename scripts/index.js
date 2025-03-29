@@ -29,11 +29,9 @@ const profileEditButton = document.querySelector(".profile__edit-button");
 
 const editModal = document.querySelector("#edit-modal");
 
+const editModalForm = editModal.querySelector(".modal__form");
+
 const editModalCloseButton = editModal.querySelector(".modal__close-button");
-
-profileEditButton.addEventListener("click", openModal);
-
-editModalCloseButton.addEventListener("click", closeModal);
 
 const profileTitle = document.querySelector(".profile__title");
 
@@ -45,7 +43,9 @@ const editModalDescriptionInput = editModal.querySelector(
   "#profile-description-input"
 );
 
-const editModalForm = editModal.querySelector(".modal__form");
+const cardTemplate = document.querySelector("#card-template");
+
+const cardsList = document.querySelector(".cards__list");
 
 function openModal() {
   editModalTitleInput.value = profileTitle.textContent;
@@ -64,24 +64,18 @@ function handleEditModalFormSubmit(evt) {
   closeModal();
 }
 
-editModalForm.addEventListener("submit", handleEditModalFormSubmit);
-
-const cardTemplate = document.querySelector("#card-template");
-const cardsList = document.querySelector(".cards__list");
-
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
     .cloneNode(true);
 
-  const cardNameEl = cardElement.querySelector(".card__title");
-  // select the image element
   const cardImageEl = cardElement.querySelector(".card__image");
+  const cardNameEl = cardElement.querySelector(".card__title");
+
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
 
   cardNameEl.textContent = data.name;
-  // assign values to images src and alt
 
   return cardElement;
 }
@@ -90,3 +84,7 @@ for (let i = 0; i < initialCards.length; i++) {
   const cardElement = getCardElement(initialCards[i]);
   cardsList.prepend(cardElement);
 }
+
+editModalForm.addEventListener("submit", handleEditModalFormSubmit);
+profileEditButton.addEventListener("click", openModal);
+editModalCloseButton.addEventListener("click", closeModal);

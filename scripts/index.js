@@ -1,5 +1,9 @@
 const initialCards = [
   {
+    name: "Golden Gate bridge",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+  },
+  {
     name: "Sunflower Field",
     link: "https://images.unsplash.com/photo-1536633125620-8a3245c11ffa?w=120&dpr=2&h=200&auto=format&fit=crop&q=60&ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8c3VuZmxvd2VyJTIwZmllbGR8ZW58MHx8fHwxNzQzMTE0OTQ5fDA&ixlib=rb-4.0.3",
   },
@@ -47,21 +51,39 @@ const cardTemplate = document.querySelector("#card-template");
 
 const cardsList = document.querySelector(".cards__list");
 
-function openModal() {
-  editModalTitleInput.value = profileTitle.textContent;
-  editModalDescriptionInput.value = profileDescription.textContent;
-  editModal.classList.add("modal_opened");
+const postModal = document.querySelector("#post-modal");
+
+const newPostButton = document.querySelector(".profile__newpost-button");
+
+const postModalCloseButton = postModal.querySelector(".modal__close-button");
+
+const postModalForm = postModal.querySelector(".modal__form");
+
+const postLinkInput = postModal.querySelector("#post-link-input");
+
+const postCaptionInput = postModal.querySelector("#post-caption-input");
+
+const previewModal = document.querySelector("#preview-modal");
+
+const previewModalImageEl = previewModal.querySelector(".modal__image");
+
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
+
+const modalClosePreview = previewModal.querySelector(".modal__close_preview");
+
+function openModal(modal) {
+  modal.classList.add("modal_opened");
 }
 
-function closeModal() {
-  editModal.classList.remove("modal_opened");
+function closeModal(modal) {
+  modal.classList.remove("modal_opened");
 }
 
 function handleEditModalFormSubmit(evt) {
   evt.preventDefault();
   profileTitle.textContent = editModalTitleInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  closeModal();
+  closeModal(editModal);
 }
 
 function getCardElement(data) {
@@ -71,20 +93,70 @@ function getCardElement(data) {
 
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardNameEl = cardElement.querySelector(".card__title");
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
-
   cardNameEl.textContent = data.name;
+
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_liked");
+  });
+
+  cardDeleteButton.addEventListener("click", () => {
+    const cardToDelete = cardDeleteButton.closest(".card");
+    cardToDelete.remove();
+  });
+
+  cardImageEl.addEventListener("click", () => {
+    openModal(previewModal);
+    previewModalImageEl.src = data.link;
+    previewModalImageEl.alt = data.name;
+    previewModalCaptionEl.textContent = data.name;
+
+    modalClosePreview.addEventListener("click", () => {
+      closeModal(previewModal);
+    });
+  });
 
   return cardElement;
 }
 
-for (let i = 0; i < initialCards.length; i++) {
-  const cardElement = getCardElement(initialCards[i]);
+function handlePostSubmit(evt) {
+  evt.preventDefault();
+  const inputValues = {
+    name: postCaptionInput.value,
+    link: postLinkInput.value,
+  };
+  const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  closeModal(postModal);
 }
 
 editModalForm.addEventListener("submit", handleEditModalFormSubmit);
-profileEditButton.addEventListener("click", openModal);
-editModalCloseButton.addEventListener("click", closeModal);
+
+profileEditButton.addEventListener("click", () => {
+  editModalTitleInput.value = profileTitle.textContent;
+  editModalDescriptionInput.value = profileDescription.textContent;
+  openModal(editModal);
+});
+
+editModalCloseButton.addEventListener("click", () => {
+  closeModal(editModal);
+});
+
+newPostButton.addEventListener("click", () => {
+  openModal(postModal);
+});
+
+postModalCloseButton.addEventListener("click", () => {
+  closeModal(postModal);
+});
+
+postModalForm.addEventListener("submit", handlePostSubmit);
+
+initialCards.forEach((card) => {
+  const cardElement = getCardElement(card);
+  cardsList.prepend(cardElement);
+});

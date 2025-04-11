@@ -86,7 +86,7 @@
   background-image: url(..//images/Close.selected.svg);
 }
 
-.modal__close_preview {
+.modal__close-button_type_preview {
   background-image: url(../images/Close\ Preview\ icon.svg);
   cursor: pointer;
   width: 40px;
@@ -100,7 +100,7 @@
   transition: 0.3s ease-in;
 }
 
-.modal__close_preview:hover {
+.modal__close-button_type_preview:hover {
   background-image: url(../images/Close\ Preview-Hover\ icon.svg);
 }
 

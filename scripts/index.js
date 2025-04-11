@@ -69,7 +69,9 @@ const previewModalImageEl = previewModal.querySelector(".modal__image");
 
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 
-const modalClosePreview = previewModal.querySelector(".modal__close_preview");
+const modalClosePreview = previewModal.querySelector(
+  ".modal__close-button_type_preview"
+);
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
@@ -114,10 +116,6 @@ function getCardElement(data) {
     previewModalImageEl.src = data.link;
     previewModalImageEl.alt = data.name;
     previewModalCaptionEl.textContent = data.name;
-
-    modalClosePreview.addEventListener("click", () => {
-      closeModal(previewModal);
-    });
   });
 
   return cardElement;
@@ -131,6 +129,7 @@ function handlePostSubmit(evt) {
   };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
+  postModalForm.reset();
   closeModal(postModal);
 }
 
@@ -148,6 +147,10 @@ editModalCloseButton.addEventListener("click", () => {
 
 newPostButton.addEventListener("click", () => {
   openModal(postModal);
+});
+
+modalClosePreview.addEventListener("click", () => {
+  closeModal(previewModal);
 });
 
 postModalCloseButton.addEventListener("click", () => {

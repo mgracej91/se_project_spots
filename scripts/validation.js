@@ -20,6 +20,7 @@ const hideInputError = (formElement, inputElement, config) => {
   const errorMsgElement = formElement.querySelector("#" + errorMsgId);
   errorMsgElement.textContent = "";
   inputElement.classList.remove(config.inputErrorClass);
+  errorMsgElement.classList.remove(config.errorClass);
 };
 
 const checkInputValidity = (formElement, inputElement, config) => {
@@ -82,7 +83,6 @@ function resetValidation(formElement, config) {
     hideInputError(formElement, inputElement, config);
   });
 
-  formElement.reset();
   toggleButtonState(inputList, buttonElement, config);
 }
 

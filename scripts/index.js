@@ -79,10 +79,6 @@ const modalCloseOverlay = document.querySelectorAll(".modal");
 
 function openModal(modal) {
   modal.classList.add("modal_opened");
-  const form = modal.querySelector(".modal__form");
-  if (form) {
-    resetValidation(form, settings);
-  }
   document.addEventListener("keydown", handleEscClose);
 }
 
@@ -151,10 +147,6 @@ profileEditButton.addEventListener("click", () => {
   editModalTitleInput.value = profileTitle.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
   openModal(editModal);
-
-  inputList.forEach((inputElement) => {
-    checkInputValidity(editModalForm, inputElement, settings);
-  });
 });
 
 editModalCloseButton.addEventListener("click", () => {

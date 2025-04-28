@@ -13,7 +13,6 @@ const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorMsgElement = formElement.querySelector("#" + errorMsgId);
   errorMsgElement.textContent = errorMessage;
   inputElement.classList.add(config.inputErrorClass);
-  errorElement.classList.add(config.errorClass);
 };
 
 const hideInputError = (formElement, inputElement, config) => {

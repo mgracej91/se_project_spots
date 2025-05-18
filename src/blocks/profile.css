@@ -38,7 +38,7 @@
   color: rgba(33, 33, 33, 0.7);
   text-overflow: ellipsis;
   overflow: hidden;
-  display: box;
+  display: flex;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }

@@ -83,11 +83,11 @@
 
 .modal__close-button:hover {
   cursor: pointer;
-  background-image: url(..//images/Close.selected.svg);
+  background-image: url(../images/Close.selected.svg);
 }
 
 .modal__close-button_type_preview {
-  background-image: url(../images/Close\ Preview\ icon.svg);
+  background-image: url(../images/Close-Preview-icon.svg);
   cursor: pointer;
   width: 40px;
   height: 40px;
@@ -101,7 +101,7 @@
 }
 
 .modal__close-button_type_preview:hover {
-  background-image: url(../images/Close\ Preview-Hover\ icon.svg);
+  background-image: url(../images/Close-Preview-Hover-icon.svg);
 }
 
 .modal__title {

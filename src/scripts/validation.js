@@ -1,5 +1,5 @@
 export const settings = {
-  formSelector: ".modal__form",
+  formSelector: ".modal__form--validate",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__save-button",
   modalButtonSelector: ".modal__close-button",

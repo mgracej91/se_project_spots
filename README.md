@@ -27,4 +27,6 @@ This webpage is deployed to GitHubPages
 
 - [Deployment Link:] https://mgracej91.github.io/se_project_spots/
 
+- [Demo Link:] https://www.loom.com/share/250466615b9d400f945b4d0f51b8df8f?sid=03a884bb-33bd-44e9-8df2-cf0c36542032
+
 One of the challenges I had in doing this project was connect Javascript validation method to DOM. To fix this issue I used online resources like MDN to help correct the validation for some of the content on my page such as the 3 functions showInputError, hideInputError, and Checkvalidity methods.

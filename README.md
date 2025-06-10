@@ -4,7 +4,7 @@ An image sharing platform.
 
 ## Description
 
-This project is made so all the elements are displayed correctly on popular screen sizes creating a social media platform that can be used for editing a profile, as well as posting images for people to view and like.
+This project is a social media platform that can be used for posting images. Spots allows the user to upload their photo with name and description, create new posts giving other users the option to like the posts, and also has the option for deleting posts.
 
 ## Tech stack
 
@@ -13,7 +13,7 @@ This project is made so all the elements are displayed correctly on popular scre
 - JavaScript
 - Form Validation
 - Responsive design
-- Figma design
+- Asynchronous operations
 - BEM file structure
 - Git
 

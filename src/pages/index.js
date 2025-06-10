@@ -235,8 +235,6 @@ function handlePostSubmit(evt) {
   api
     .newCard({ link: postLinkInput.value, name: postCaptionInput.value })
     .then((data) => {
-      postCaptionInput.value = "";
-      postLinkInput.value = "";
       const cardElement = getCardElement(data);
       cardsList.prepend(cardElement);
       postModalForm.reset();
@@ -260,8 +258,7 @@ function handleAvatarSubmit(evt) {
     .newAvatar(avatarUrl)
     .then((url) => {
       avatarInput.value = "";
-      const avatarElement = document.querySelector(".profile__avatar");
-      avatarElement.src = url.avatar;
+      profileAvatar.src = url.avatar;
       closeModal(avatarModal);
     })
     .catch((err) => {
@@ -287,7 +284,7 @@ editModalCloseButton.addEventListener("click", () => {
 
 const handleCloseModal = (evt) => {
   if (evt.target.classList.contains("modal")) {
-    evt.target.classList.remove("modal_opened");
+    closeModal(evt.target);
   }
 };
 

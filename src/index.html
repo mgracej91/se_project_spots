@@ -165,12 +165,13 @@
       <div class="modal__container">
         <button type="button" class="modal__close-button"></button>
         <h3 class="modal__title">Edit profile avatar</h3>
-        <form class="modal__form" id="edit-avatar-form">
+        <form class="modal__form--validate" id="edit-avatar-form" novalidate>
           <label for="profile-avatar-input" class="modal__label">
             Profile Picture
             <input
               class="modal__input"
               name="avatar"
+              type="url"
               placeholder="Paste the link to an image"
               id="profile-avatar-input"
               required

@@ -104,6 +104,30 @@
   background-image: url(../images/Close-Preview-Hover-icon.svg);
 }
 
+.modal__button-delete {
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #ff6565;
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.modal__button-cancel {
+  width: 156px;
+  height: 52px;
+  border-radius: 8px;
+  border-style: 1px;
+  background: #212121;
+  color: #ffffff;
+  cursor: pointer;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-family: "Poppins", Arial, Helvetica, sans-serif;
